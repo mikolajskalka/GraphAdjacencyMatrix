@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-    GraphAM<int> g;
+    GraphAM g;
     for(int i = 0; i < 10; i++)
     {
         g.add_node();
