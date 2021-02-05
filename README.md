@@ -2,7 +2,7 @@
 
 Klasa reprezentująca graf jako macierz sąsiedztwa.
 
-Zaimplementowano metody
+### Zaimplementowano metody:
 
 display() - wyświetla macierz sąsiedztwa
 add_node() - dodaje kolejny wierzchołek do grafu
