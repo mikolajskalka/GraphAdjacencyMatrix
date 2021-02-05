@@ -105,8 +105,9 @@ void GraphAM::add_node()
 void GraphAM::add_edge(int node1, int node2)
 {
     if(node1 >= nodes || node2 >= nodes) throw "Node is not in the graph";
-    am[node1][node2] += 1;
-    am[node2][node1] += 1;
+    if(am[node1][node2] == 1 || am[node2][node1] == 1) throw "Edge already exists";
+    am[node1][node2] = 1;
+    am[node2][node1] = 1;
     edges++;
 }
 
