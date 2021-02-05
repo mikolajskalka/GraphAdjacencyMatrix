@@ -5,7 +5,7 @@
 #include <queue>
 
 
-template <typename T>
+
 class GraphAM
 {
     public:
@@ -45,31 +45,31 @@ class GraphAM
 
 };
 
-template<typename T>
-GraphAM<T>::GraphAM(int n): nodes(n), am(n), edges(0)
+
+GraphAM::GraphAM(int n): nodes(n), am(n), edges(0)
 {
 };
 
-template <typename T>
-GraphAM<T>::GraphAM(const GraphAM<T>& source): nodes(source.nodes), am(source.am)
+
+GraphAM::GraphAM(const GraphAM& source): nodes(source.nodes), am(source.am)
 {
 };
 
-template <typename T>
-GraphAM<T>::GraphAM(GraphAM&& source): nodes(std::move(source.nodes)), am(std::move(source.am))
+
+GraphAM::GraphAM(GraphAM&& source): nodes(std::move(source.nodes)), am(std::move(source.am))
 {
 };
 
-template <typename T>
-bool GraphAM<T>::empty() const
+
+bool GraphAM::empty() const
 {
     if(nodes == 0) return true;
     return false;
 }
 
 
-template <typename T>
-void GraphAM<T>::display() const
+
+void GraphAM::display() const
 {
     for(auto v : am)
     {
@@ -82,8 +82,8 @@ void GraphAM<T>::display() const
     std::cout << "\n";
 }
 
-template <typename T>
-void GraphAM<T>::add_node()
+
+void GraphAM::add_node()
 {
     if(empty())
     {
@@ -101,8 +101,8 @@ void GraphAM<T>::add_node()
     nodes++;
 }
 
-template <typename T>
-void GraphAM<T>::add_edge(int node1, int node2)
+
+void GraphAM::add_edge(int node1, int node2)
 {
     if(node1 >= nodes || node2 >= nodes) throw "Node is not in the graph";
     am[node1][node2] += 1;
@@ -110,12 +110,12 @@ void GraphAM<T>::add_edge(int node1, int node2)
     edges++;
 }
 
-template <typename T>
-void GraphAM<T>::BFS(int root)
+
+void GraphAM::BFS(int root)
 {
     if(empty()) return;
     std::vector<bool> visited (nodes, false);
-    std::queue<T> queue;
+    std::queue<int> queue;
     int node = root;
     queue.push(root);
     visited[node] = true;
@@ -137,16 +137,16 @@ void GraphAM<T>::BFS(int root)
     }
 }
 
-template <typename T>
-void GraphAM<T>::DFS(int root)
+
+void GraphAM::DFS(int root)
 {
     if(empty()) return;
     std::vector<bool> visited (nodes, false);
     DFS(root, visited);
 }
 
-template <typename T>
-void GraphAM<T>::DFS(int root, std::vector<bool> visited)
+
+void GraphAM::DFS(int root, std::vector<bool> visited)
 {
     visited[root] = true;
     std::cout << root << " ";
@@ -159,8 +159,8 @@ void GraphAM<T>::DFS(int root, std::vector<bool> visited)
     }
 }
 
-template <typename T>
-void GraphAM<T>::del_edge(int node1, int node2)
+
+void GraphAM::del_edge(int node1, int node2)
 {
     if(node1 > nodes || node2 > nodes) return;
     if(am[node1][node2] == 1 || am[node2][node1] == 1)
