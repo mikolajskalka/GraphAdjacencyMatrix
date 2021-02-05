@@ -8,7 +8,7 @@ all: main
 main: main.o
 	$(CC) $(CFLAGS) main.o -o main
 
-main.o: main.cpp RandomBinaryTree.h
+main.o: main.cpp GraphAM.hpp
 	$(CC) $(CFLAGS) -c  main.cpp
 
 # singlelist.o: singlelist.cpp singlelist.h
