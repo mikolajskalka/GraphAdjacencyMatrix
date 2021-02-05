@@ -22,6 +22,7 @@ class GraphAM
     void BFS() { BFS(0); };
     void DFS() { DFS(0); };
     int get_nodes() { return nodes; };
+    int get_edges() { return edges; };
 
 
     void DFS(int node);
@@ -29,6 +30,7 @@ class GraphAM
 
     void add_node();
     void add_edge(int node1, int node2);
+    void del_edge(int node1, int node2);
 
     private:
 
@@ -39,21 +41,22 @@ class GraphAM
     private:
     std::vector<std::vector<int>> am;
     int nodes;
+    int edges;
 
 };
 
 template<typename T>
-GraphAM<T>::GraphAM(int n): nodes(n), am(n)
+GraphAM<T>::GraphAM(int n): nodes(n), am(n), edges(0)
 {
 };
 
 template <typename T>
-GraphAM<T>::GraphAM(const GraphAM<T>& source): am(source.am)
+GraphAM<T>::GraphAM(const GraphAM<T>& source): nodes(source.nodes), am(source.am)
 {
 };
 
 template <typename T>
-GraphAM<T>::GraphAM(GraphAM&& source): am(std::move(source.am))
+GraphAM<T>::GraphAM(GraphAM&& source): nodes(std::move(source.nodes)), am(std::move(source.am))
 {
 };
 
@@ -104,6 +107,7 @@ void GraphAM<T>::add_edge(int node1, int node2)
     if(node1 >= nodes || node2 >= nodes) throw "Node is not in the graph";
     am[node1][node2] += 1;
     am[node2][node1] += 1;
+    edges++;
 }
 
 template <typename T>
@@ -152,5 +156,17 @@ void GraphAM<T>::DFS(int root, std::vector<bool> visited)
         {
             DFS(i, visited);
         }
+    }
+}
+
+template <typename T>
+void GraphAM<T>::del_edge(int node1, int node2)
+{
+    if(node1 > nodes || node2 > nodes) return;
+    if(am[node1][node2] == 1 || am[node2][node1] == 1)
+    {
+        am[node1][node2] = 0;
+        am[node2][node1] = 0;
+        edges--;
     }
 }
