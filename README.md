@@ -4,7 +4,7 @@ Klasa reprezentująca graf jako macierz sąsiedztwa.
 
 ### Zaimplementowano metody:
 
-display() - wyświetla macierz sąsiedztwa
+`display()` - wyświetla macierz sąsiedztwa
 add_node() - dodaje kolejny wierzchołek do grafu
 add_edge(int node1, int node2) - dodaje krawędź pomiędzy wierzchołkami node1 i node2
 get_nodes() - zwraca liczbę wierzchołków

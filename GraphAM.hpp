@@ -23,6 +23,9 @@ class GraphAM
     void DFS() { DFS(0); };
     int get_nodes() { return nodes; };
     int get_edges() { return edges; };
+    bool has_edge(int node1, int node2);
+    bool has_node(int node);
+    void clear();
 
 
     void DFS(int node);
