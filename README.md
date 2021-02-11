@@ -9,7 +9,7 @@ Klasa reprezentująca graf jako macierz sąsiedztwa.
 `add_edge(int node1, int node2)` - dodaje krawędź pomiędzy wierzchołkami node1 i node2\
 `get_nodes()` - zwraca liczbę wierzchołków\
 `get_edges()` - zwraca liczbę krawędzi\
-`del_edge(int node1, int node2)` - usuwa krawędź pomiędzy wierzchołkami node1 i node2\ 
+`del_edge(int node1, int node2)` - usuwa krawędź pomiędzy wierzchołkami node1 i node2 \ 
 `BFS()` - przechodzi po wszystkich wierzchołkach grafu zgodnie
 z algorytmem bread firs search i wyświetla je, przejście zaczyna się od wierzchołka "0" \
 `BFS(int node)` -  przechodzi po wszystystkich wierzchołkachgrafu zgodnie 
