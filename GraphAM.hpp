@@ -32,8 +32,8 @@ class GraphAM
     void BFS(int node);
 
     void add_node();
-    void add_edge(int node1, int node2);
-    void del_edge(int node1, int node2);
+    bool add_edge(int node1, int node2);
+    bool del_edge(int node1, int node2);
 
     private:
 
@@ -105,13 +105,14 @@ void GraphAM::add_node()
 }
 
 
-void GraphAM::add_edge(int node1, int node2)
+bool GraphAM::add_edge(int node1, int node2)
 {
     if(node1 >= nodes || node2 >= nodes) throw "Node is not in the graph";
     if(am[node1][node2] == 1 || am[node2][node1] == 1) throw "Edge already exists";
     am[node1][node2] = 1;
     am[node2][node1] = 1;
     edges++;
+    return true;
 }
 
 
@@ -164,13 +165,14 @@ void GraphAM::DFS(int root, std::vector<bool> visited)
 }
 
 
-void GraphAM::del_edge(int node1, int node2)
+bool GraphAM::del_edge(int node1, int node2)
 {
-    if(node1 > nodes || node2 > nodes) return;
+    if(node1 > nodes || node2 > nodes) return false;
     if(am[node1][node2] == 1 || am[node2][node1] == 1)
     {
         am[node1][node2] = 0;
         am[node2][node1] = 0;
         edges--;
     }
+    return true;
 }
