@@ -42,14 +42,14 @@ class GraphAM
     
 
     private:
-    std::vector<std::vector<int>> am;
     int nodes;
     int edges;
+    std::vector<std::vector<int>> am;
 
 };
 
 
-GraphAM::GraphAM(int n): nodes(n), am(n), edges(0)
+GraphAM::GraphAM(int n): nodes(n), edges(0), am(n, std::vector<int> (10))
 {
 };
 
@@ -175,4 +175,25 @@ bool GraphAM::del_edge(int node1, int node2)
         edges--;
     }
     return true;
+}
+
+
+bool GraphAM::has_edge(int node1, int node2)
+{
+    if(node1 > nodes || node2 > nodes) return false;
+    if(am[node1][node2] == 1 || am[node2][node1] == 1) return true;
+    return false;
+}
+
+bool GraphAM::has_node(int node)
+{
+    if(node < nodes) return true;
+    return false;
+}
+
+void GraphAM::clear()
+{
+    nodes = 0;
+    edges = 0;
+    am = std::vector<std::vector<int>> (0);
 }
