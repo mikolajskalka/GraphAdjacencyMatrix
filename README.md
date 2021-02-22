@@ -1,6 +1,21 @@
 # GraphAdjacencyMatrix
 
-Klasa reprezentująca graf jako macierz sąsiedztwa.
+Klasa reprezentująca graf nieskierowany jako macierz sąsiedztwa.
+
+### Wprowadzenie:
+
+W pliku main.cpp znajdują się testy zaimplementowanych metod. 
+Plik main.cpp uruchamia się za pomocą pliku Makefile. W pliku Makefile znajdują się komendy pozwalające
+na skompilowanie programu oraz jego uruchomienie. W tym celu należy wpisać w konsoli polecenie <br/>
+`make all` <br/>
+plik main.cpp zostanie skompilowany oraz uruchomiony, a na konsoli zostanie wyświetlona macierz sąsiedztwa
+reprezentująca poniższy graf:
+
+![image](./Graph.png)
+
+Wyświetlone zostaną również kolejne wierzchołki odwiedzane podczas przechodzenia grafu
+algorytmami BFS i DFS.
+
 
 ### Zaimplementowano metody:
 
@@ -20,5 +35,5 @@ z algorytmem depth first search i wyświetla je, przejcie zaczyna się od wierzc
 z algorytmem bdepth first search i wyświetla je, przejscie zaczyna się od wierchołka node
 
 
-![image](./Graph.pngcd ..)
+
 

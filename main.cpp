@@ -117,10 +117,11 @@ int main()
     g.add_edge(7, 9);
 
     g.display();
+    cout << "Kolejno odwiedzane wierzchołki algorytmem BFS:" << endl;
     g.BFS();
     cout << endl;
+    cout << "Kolejno odwiedzane wierzchołki algorytmem DFS:" << endl;
     g.DFS();
     cout << endl;
-    cout << g.get_nodes() << endl;
     return 0;
 }
