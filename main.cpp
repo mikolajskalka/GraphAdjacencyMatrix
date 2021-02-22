@@ -9,18 +9,18 @@ void add_edge_test()
 {
     GraphAM g(10);
     g.add_edge(1, 1);
-    assert((g.get_edges() == 1 && g.has_edge(1, 1))  && "Testing add_edge.");
+    assert((g.get_edges() == 1 && g.has_edge(1, 1) == true)  && "Testing add_edge.");
 
 }
 
 void del_edge_test()
 {
     GraphAM g(0);
-    (g.del_edge(1, 1) && "Testing del_edge with no edge to delete.");
+    assert((g.del_edge(1, 1) == false) && "Testing del_edge with no edge to delete.");
 
     GraphAM g2(10);
-    g.add_edge(1, 1);
-    assert((g2.del_edge(1, 1)) && "Testing del_edge with edge to delete.");
+    g2.add_edge(1, 1);
+    assert((g2.del_edge(1, 1) == true) && "Testing del_edge with edge to delete.");
 }
 
 void has_node_test()
@@ -29,7 +29,7 @@ void has_node_test()
     assert((g.has_node(1) == false) && "Testing has_node with no node.");
 
     GraphAM g2(10);
-    assert((g2.has_node(1) == false) && "Testing has_node with node.");
+    assert((g2.has_node(1) == true) && "Testing has_node with node.");
 }
 
 void has_edge_test()
@@ -38,7 +38,7 @@ void has_edge_test()
     assert((g.has_edge(1, 1) == false) && "Testing has_edge with no edge.");
 
     GraphAM g2(10);
-    g.add_edge(1, 1);
+    g2.add_edge(1, 1);
     assert((g2.has_edge(1, 1) == true) && "Testing has_edge with edge.");
 }
 
@@ -82,7 +82,7 @@ void get_edges_test()
     assert((g.get_edges() == 0) && "Testing get_edges with no edge.");
 
     GraphAM g2(10);
-    g.add_edge(1, 1);
+    g2.add_edge(1, 1);
     assert((g2.get_edges() == 1) && "Testing get_edges with edge.");
 }
 

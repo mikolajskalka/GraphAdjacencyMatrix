@@ -173,8 +173,9 @@ bool GraphAM::del_edge(int node1, int node2)
         am[node1][node2] = 0;
         am[node2][node1] = 0;
         edges--;
+        return true;
     }
-    return true;
+    return false;
 }
 
 

@@ -20,5 +20,5 @@ z algorytmem depth first search i wyświetla je, przejcie zaczyna się od wierzc
 z algorytmem bdepth first search i wyświetla je, przejscie zaczyna się od wierchołka node
 
 
-![image](./Graph.png)
+![image](./Graph.pngcd ..)
 
