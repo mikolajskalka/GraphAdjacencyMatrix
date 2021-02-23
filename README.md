@@ -20,7 +20,7 @@ algorytmami BFS i DFS.
 ### Zaimplementowano metody:
 
 `GraphAM()` - konstruktor podstawowy, inicjuje graf bez wierzchołków <br/>
-`GraphAM(n)` - kostruktor, tworzy macierz macierz sąsiedztwa dla grafu z n wierzchołkami <br\>
+`GraphAM(n)` - kostruktor, tworzy macierz macierz sąsiedztwa dla grafu z n wierzchołkami <br/>
 `GraphAM(const GraphAM& g)` - konstruktor kopiujący, tworzy nowy obiekt, który jest kopią przekazanego obiektu <br/>
 `GraphAM(GraphAM&& g) ` - konstruktor przenoszący, przenosi zadany obiekt do nowego obiektu <br/>
 `~GraphAM()` - destruktor (defaultowy) <br/>
