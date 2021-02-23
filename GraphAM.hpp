@@ -32,6 +32,7 @@ class GraphAM
     void BFS(int node);
 
     void add_node();
+    void del_node(int node);
     bool add_edge(int node1, int node2);
     bool del_edge(int node1, int node2);
 
@@ -49,7 +50,7 @@ class GraphAM
 };
 
 
-GraphAM::GraphAM(int n): nodes(n), edges(0), am(n, std::vector<int> (10))
+GraphAM::GraphAM(int n): nodes(n), edges(0), am(n, std::vector<int> (n))
 {
 };
 
@@ -197,4 +198,14 @@ void GraphAM::clear()
     nodes = 0;
     edges = 0;
     am = std::vector<std::vector<int>> (0);
+}
+
+void GraphAM::del_node(int node)
+{
+    if(node >= nodes) return;
+    for(int i = 0; i < nodes; i++)
+    {
+        am[node][i] = 0;
+        am[i][node] = 0;
+    }
 }

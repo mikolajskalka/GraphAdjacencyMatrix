@@ -86,6 +86,16 @@ void get_edges_test()
     assert((g2.get_edges() == 1) && "Testing get_edges with edge.");
 }
 
+void del_node_test()
+{
+    GraphAM g2(10);
+    g2.add_edge(1, 1);
+    g2.add_edge(0, 1);
+    g2.add_edge(1, 8);
+    g2.del_node(1);
+    assert((g2.has_edge(1, 1) == false) && "Testing get_edges with edge.");
+}
+
 
 
 
@@ -99,6 +109,7 @@ int main()
     has_node_test();
     get_edges_test();
     get_nodes_test();
+    del_node_test();
     empty_test();
 
 

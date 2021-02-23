@@ -19,11 +19,19 @@ algorytmami BFS i DFS.
 
 ### Zaimplementowano metody:
 
+`GraphAM()` - konstruktor podstawowy, inicjuje graf bez wierzchołków <br/>
+`GraphAM(n)` - kostruktor, tworzy macierz macierz sąsiedztwa dla grafu z n wierzchołkami <br\>
+`GraphAM(const GraphAM& g)` - konstruktor kopiujący, tworzy nowy obiekt, który jest kopią przekazanego obiektu <br/>
+`GraphAM(GraphAM&& g) ` - konstruktor przenoszący, przenosi zadany obiekt do nowego obiektu <br/>
+`~GraphAM()` - destruktor (defaultowy) <br/>
 `display()` - wyświetla macierz sąsiedztwa\
 `add_node()` - dodaje kolejny wierzchołek do grafu\
 `add_edge(int node1, int node2)` - dodaje krawędź pomiędzy wierzchołkami node1 i node2\
 `get_nodes()` - zwraca liczbę wierzchołków\
 `get_edges()` - zwraca liczbę krawędzi\
+`has_edge(int node1, int node2)` - sprawdza czy obiekt posiada krawędź pomiędzy dwoma wierzchołkami, zwraca bool (true/false) <br/>
+`has_node(int node)` - sprawdza czy obiekt posiada przekazany wierzchołek, zwraca bool (true/false) <br/> 
+`del_node(int node)` - usuwa wszystkie krawędzie prowadzące do danego wierzchołka <br/>
 `del_edge(int node1, int node2)` - usuwa krawędź pomiędzy wierzchołkami node1 i node2 <br/> 
 `BFS()` - przechodzi po wszystkich wierzchołkach grafu zgodnie
 z algorytmem bread firs search i wyświetla je, przejście zaczyna się od wierzchołka "0" <br/>
